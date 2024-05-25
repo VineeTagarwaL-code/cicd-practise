@@ -1,0 +1,17 @@
+name: build pr 
+
+on:
+  pull_request:
+    branches: [ main ]  
+
+jobs:
+  build:
+    name:  build the project
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout
+          uses: actions/checkout@v2
+        - name: build
+          run: |
+            npm install
+            npm run build
